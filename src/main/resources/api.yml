@@ -1,0 +1,63 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Swagger Hello Unicorn Bank
+  license:
+    name: MIT
+servers:
+  - url: http://localhost:8080/
+paths:
+  /unicorns:
+    get:
+      summary: List all unicorns
+      operationId: listUnicorns
+      tags:
+        - unicorns
+      responses:
+        '200':
+          description: A paged array of unicorns
+          headers:
+            x-next:
+              description: A link to the next page of responses
+              schema:
+                type: string
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/unicorns"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Unicorn:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        tag:
+          type: string
+    unicorns:
+      type: array
+      items:
+        $ref: "#/components/schemas/Unicorn"
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

@@ -1,4 +1,4 @@
-package com.unicorn.bank.unicornapi;
+package com.unicorn.bank;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

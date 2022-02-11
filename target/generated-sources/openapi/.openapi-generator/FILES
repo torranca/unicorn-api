@@ -1,0 +1,6 @@
+src/main/java/com/unicorn/bank/api/ApiUtil.java
+src/main/java/com/unicorn/bank/api/UnicornsApi.java
+src/main/java/com/unicorn/bank/api/UnicornsApiController.java
+src/main/java/com/unicorn/bank/api/UnicornsApiDelegate.java
+src/main/java/com/unicorn/bank/model/Error.java
+src/main/java/com/unicorn/bank/model/Unicorn.java
