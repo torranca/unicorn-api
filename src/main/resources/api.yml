@@ -5,26 +5,21 @@ info:
   license:
     name: MIT
 servers:
-  - url: http://localhost:8080/
+  - url: http://localhost:8080/api/v1
 paths:
-  /unicorns:
+  /ping:
     get:
-      summary: List all unicorns
-      operationId: listUnicorns
+      summary: Quick Ping Check
+      operationId: ping
       tags:
-        - unicorns
+        - ping
       responses:
         '200':
-          description: A paged array of unicorns
-          headers:
-            x-next:
-              description: A link to the next page of responses
-              schema:
-                type: string
+          description: A ping
           content:
             application/json:    
               schema:
-                $ref: "#/components/schemas/unicorns"
+                $ref: "#/components/schemas/Ping"
         default:
           description: unexpected error
           content:
@@ -33,23 +28,17 @@ paths:
                 $ref: "#/components/schemas/Error"
 components:
   schemas:
-    Unicorn:
+    Ping:
       type: object
       required:
         - id
-        - name
+        - message
       properties:
         id:
-          type: integer
-          format: int64
-        name:
           type: string
-        tag:
+          format: uuid
+        message:
           type: string
-    unicorns:
-      type: array
-      items:
-        $ref: "#/components/schemas/Unicorn"
     Error:
       type: object
       required:

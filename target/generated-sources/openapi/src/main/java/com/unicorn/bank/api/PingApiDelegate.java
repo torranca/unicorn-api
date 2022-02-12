@@ -1,7 +1,7 @@
 package com.unicorn.bank.api;
 
 import com.unicorn.bank.model.Error;
-import com.unicorn.bank.model.Unicorn;
+import com.unicorn.bank.model.Ping;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -14,28 +14,28 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * A delegate to be called by the {@link UnicornsApiController}}.
+ * A delegate to be called by the {@link PingApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-02-11T17:32:40.795760Z[Europe/London]")
-public interface UnicornsApiDelegate {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-02-12T09:39:19.837026Z[Europe/London]")
+public interface PingApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
     }
 
     /**
-     * GET /unicorns : List all unicorns
+     * GET /ping : Quick Ping Check
      *
-     * @return A paged array of unicorns (status code 200)
+     * @return A ping (status code 200)
      *         or unexpected error (status code 200)
-     * @see UnicornsApi#listUnicorns
+     * @see PingApi#ping
      */
-    default ResponseEntity<List<Unicorn>> listUnicorns() {
+    default ResponseEntity<Ping> ping() {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"tag\" : \"tag\" }";
+                    String exampleString = "{ \"id\" : \"046b6c7f-0b8a-43b9-b35d-6489e6daee91\", \"message\" : \"message\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

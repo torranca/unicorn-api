@@ -5,25 +5,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Unicorn
+ * Ping
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-02-11T17:32:40.795760Z[Europe/London]")
-public class Unicorn   {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-02-12T09:39:19.837026Z[Europe/London]")
+public class Ping   {
   @JsonProperty("id")
-  private Long id;
+  private UUID id;
 
-  @JsonProperty("name")
-  private String name;
+  @JsonProperty("message")
+  private String message;
 
-  @JsonProperty("tag")
-  private String tag;
-
-  public Unicorn id(Long id) {
+  public Ping id(UUID id) {
     this.id = id;
     return this;
   }
@@ -35,54 +33,35 @@ public class Unicorn   {
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
+  @Valid
 
-  public Long getId() {
+  public UUID getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(UUID id) {
     this.id = id;
   }
 
-  public Unicorn name(String name) {
-    this.name = name;
+  public Ping message(String message) {
+    this.message = message;
     return this;
   }
 
   /**
-   * Get name
-   * @return name
+   * Get message
+   * @return message
   */
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
 
-  public String getName() {
-    return name;
+  public String getMessage() {
+    return message;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public Unicorn tag(String tag) {
-    this.tag = tag;
-    return this;
-  }
-
-  /**
-   * Get tag
-   * @return tag
-  */
-  @ApiModelProperty(value = "")
-
-
-  public String getTag() {
-    return tag;
-  }
-
-  public void setTag(String tag) {
-    this.tag = tag;
+  public void setMessage(String message) {
+    this.message = message;
   }
 
 
@@ -94,25 +73,23 @@ public class Unicorn   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Unicorn unicorn = (Unicorn) o;
-    return Objects.equals(this.id, unicorn.id) &&
-        Objects.equals(this.name, unicorn.name) &&
-        Objects.equals(this.tag, unicorn.tag);
+    Ping ping = (Ping) o;
+    return Objects.equals(this.id, ping.id) &&
+        Objects.equals(this.message, ping.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, tag);
+    return Objects.hash(id, message);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Unicorn {\n");
+    sb.append("class Ping {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -1,23 +1,22 @@
 package com.unicorn.bank.api;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.UUID;
 
-import com.unicorn.bank.model.Unicorn;
+import com.unicorn.bank.model.Ping;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UnicornAPIImpl implements UnicornsApiDelegate {
+public class UnicornAPIImpl implements PingApiDelegate {
 
     @Override
-    public ResponseEntity<List<Unicorn>> listUnicorns() {
-        Unicorn alan = new Unicorn();
-        alan.setId(1l);
-        alan.setName("Space Unicorn Alan");
-        List<Unicorn> unicorns = Arrays.asList(alan);
-        return ResponseEntity.ok(unicorns);
+    public ResponseEntity<Ping> ping() {
+        Ping ping = new Ping();
+        ping.setId(UUID.randomUUID());
+        ping.setMessage("Go Unicorn Bank!");
+        return ResponseEntity.ok(ping);
     }
+
     
 }

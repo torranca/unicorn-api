@@ -6,7 +6,7 @@
 package com.unicorn.bank.api;
 
 import com.unicorn.bank.model.Error;
-import com.unicorn.bank.model.Unicorn;
+import com.unicorn.bank.model.Ping;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -18,31 +18,31 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-02-11T17:32:40.795760Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-02-12T09:39:19.837026Z[Europe/London]")
 @Validated
-@Api(value = "unicorns", description = "the unicorns API")
-public interface UnicornsApi {
+@Api(value = "ping", description = "the ping API")
+public interface PingApi {
 
-    default UnicornsApiDelegate getDelegate() {
-        return new UnicornsApiDelegate() {};
+    default PingApiDelegate getDelegate() {
+        return new PingApiDelegate() {};
     }
 
     /**
-     * GET /unicorns : List all unicorns
+     * GET /ping : Quick Ping Check
      *
-     * @return A paged array of unicorns (status code 200)
+     * @return A ping (status code 200)
      *         or unexpected error (status code 200)
      */
-    @ApiOperation(value = "List all unicorns", nickname = "listUnicorns", notes = "", response = Unicorn.class, responseContainer = "List", tags={ "unicorns", })
+    @ApiOperation(value = "Quick Ping Check", nickname = "ping", notes = "", response = Ping.class, tags={ "ping", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "A paged array of unicorns", response = Unicorn.class, responseContainer = "List"),
+        @ApiResponse(code = 200, message = "A ping", response = Ping.class),
         @ApiResponse(code = 200, message = "unexpected error", response = Error.class) })
     @GetMapping(
-        value = "/unicorns",
+        value = "/ping",
         produces = { "application/json" }
     )
-    default ResponseEntity<List<Unicorn>> listUnicorns() {
-        return getDelegate().listUnicorns();
+    default ResponseEntity<Ping> ping() {
+        return getDelegate().ping();
     }
 
 }

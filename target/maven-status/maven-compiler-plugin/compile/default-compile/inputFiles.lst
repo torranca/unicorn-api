@@ -1,9 +1,9 @@
-/Users/alantorrance/github/unicorn-api/target/generated-sources/openapi/src/main/java/com/unicorn/bank/api/UnicornsApiDelegate.java
+/Users/alantorrance/github/unicorn-api/target/generated-sources/openapi/src/main/java/com/unicorn/bank/model/Ping.java
+/Users/alantorrance/github/unicorn-api/target/generated-sources/openapi/src/main/java/com/unicorn/bank/api/PingApiController.java
 /Users/alantorrance/github/unicorn-api/target/generated-sources/openapi/src/main/java/com/unicorn/bank/api/ApiUtil.java
+/Users/alantorrance/github/unicorn-api/target/generated-sources/openapi/src/main/java/com/unicorn/bank/api/PingApiDelegate.java
 /Users/alantorrance/github/unicorn-api/src/main/java/com/unicorn/bank/unicornapi/test.java
-/Users/alantorrance/github/unicorn-api/target/generated-sources/openapi/src/main/java/com/unicorn/bank/model/Unicorn.java
 /Users/alantorrance/github/unicorn-api/target/generated-sources/openapi/src/main/java/com/unicorn/bank/model/Error.java
 /Users/alantorrance/github/unicorn-api/src/main/java/com/unicorn/bank/api/UnicornAPIImpl.java
 /Users/alantorrance/github/unicorn-api/src/main/java/com/unicorn/bank/UnicornApiApplication.java
-/Users/alantorrance/github/unicorn-api/target/generated-sources/openapi/src/main/java/com/unicorn/bank/api/UnicornsApi.java
-/Users/alantorrance/github/unicorn-api/target/generated-sources/openapi/src/main/java/com/unicorn/bank/api/UnicornsApiController.java
+/Users/alantorrance/github/unicorn-api/target/generated-sources/openapi/src/main/java/com/unicorn/bank/api/PingApi.java
