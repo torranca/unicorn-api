@@ -5,8 +5,8 @@
  */
 package com.unicorn.bank.api;
 
+import com.unicorn.bank.model.Account;
 import com.unicorn.bank.model.Error;
-import com.unicorn.bank.model.Ping;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -20,29 +20,29 @@ import java.util.List;
 import java.util.Map;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-02-12T11:40:43.041737Z[Europe/London]")
 @Validated
-@Api(value = "ping", description = "the ping API")
-public interface PingApi {
+@Api(value = "accounts", description = "the accounts API")
+public interface AccountsApi {
 
-    default PingApiDelegate getDelegate() {
-        return new PingApiDelegate() {};
+    default AccountsApiDelegate getDelegate() {
+        return new AccountsApiDelegate() {};
     }
 
     /**
-     * GET /ping : Quick Ping Check
+     * GET /accounts : Get Accounts
      *
-     * @return A ping (status code 200)
+     * @return List of Accounts (status code 200)
      *         or unexpected error (status code 200)
      */
-    @ApiOperation(value = "Quick Ping Check", nickname = "ping", notes = "", response = Ping.class, tags={ "ping", })
+    @ApiOperation(value = "Get Accounts", nickname = "getAccounts", notes = "", response = Account.class, responseContainer = "List", tags={ "account", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "A ping", response = Ping.class),
+        @ApiResponse(code = 200, message = "List of Accounts", response = Account.class, responseContainer = "List"),
         @ApiResponse(code = 200, message = "unexpected error", response = Error.class) })
     @GetMapping(
-        value = "/ping",
+        value = "/accounts",
         produces = { "application/json" }
     )
-    default ResponseEntity<Ping> ping() {
-        return getDelegate().ping();
+    default ResponseEntity<List<Account>> getAccounts() {
+        return getDelegate().getAccounts();
     }
 
 }

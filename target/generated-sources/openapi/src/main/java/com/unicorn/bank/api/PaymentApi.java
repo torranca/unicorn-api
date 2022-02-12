@@ -6,7 +6,7 @@
 package com.unicorn.bank.api;
 
 import com.unicorn.bank.model.Error;
-import com.unicorn.bank.model.Ping;
+import com.unicorn.bank.model.Payment;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -20,29 +20,29 @@ import java.util.List;
 import java.util.Map;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-02-12T11:40:43.041737Z[Europe/London]")
 @Validated
-@Api(value = "ping", description = "the ping API")
-public interface PingApi {
+@Api(value = "payment", description = "the payment API")
+public interface PaymentApi {
 
-    default PingApiDelegate getDelegate() {
-        return new PingApiDelegate() {};
+    default PaymentApiDelegate getDelegate() {
+        return new PaymentApiDelegate() {};
     }
 
     /**
-     * GET /ping : Quick Ping Check
+     * POST /payment : Post a Payment
      *
-     * @return A ping (status code 200)
+     * @return Payment Accepted (status code 200)
      *         or unexpected error (status code 200)
      */
-    @ApiOperation(value = "Quick Ping Check", nickname = "ping", notes = "", response = Ping.class, tags={ "ping", })
+    @ApiOperation(value = "Post a Payment", nickname = "postPayment", notes = "", response = Payment.class, tags={ "payment", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "A ping", response = Ping.class),
+        @ApiResponse(code = 200, message = "Payment Accepted", response = Payment.class),
         @ApiResponse(code = 200, message = "unexpected error", response = Error.class) })
-    @GetMapping(
-        value = "/ping",
+    @PostMapping(
+        value = "/payment",
         produces = { "application/json" }
     )
-    default ResponseEntity<Ping> ping() {
-        return getDelegate().ping();
+    default ResponseEntity<Payment> postPayment() {
+        return getDelegate().postPayment();
     }
 
 }

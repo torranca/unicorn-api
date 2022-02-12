@@ -91,6 +91,7 @@
 				<version>5.1.0</version>
 				<executions>
 					<execution>
+						<id>unicorn-api</id>
 						<goals>
 							<goal>generate</goal>
 						</goals>

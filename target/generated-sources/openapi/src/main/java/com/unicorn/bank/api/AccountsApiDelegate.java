@@ -1,7 +1,7 @@
 package com.unicorn.bank.api;
 
+import com.unicorn.bank.model.Account;
 import com.unicorn.bank.model.Error;
-import com.unicorn.bank.model.Ping;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -14,28 +14,28 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * A delegate to be called by the {@link PingApiController}}.
+ * A delegate to be called by the {@link AccountsApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-02-12T11:40:43.041737Z[Europe/London]")
-public interface PingApiDelegate {
+public interface AccountsApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
     }
 
     /**
-     * GET /ping : Quick Ping Check
+     * GET /accounts : Get Accounts
      *
-     * @return A ping (status code 200)
+     * @return List of Accounts (status code 200)
      *         or unexpected error (status code 200)
-     * @see PingApi#ping
+     * @see AccountsApi#getAccounts
      */
-    default ResponseEntity<Ping> ping() {
+    default ResponseEntity<List<Account>> getAccounts() {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"id\" : \"046b6c7f-0b8a-43b9-b35d-6489e6daee91\", \"message\" : \"message\" }";
+                    String exampleString = "{ \"balance\" : 0.8008281904610115, \"name\" : \"name\", \"currency\" : \"GBP\", \"id\" : \"046b6c7f-0b8a-43b9-b35d-6489e6daee91\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

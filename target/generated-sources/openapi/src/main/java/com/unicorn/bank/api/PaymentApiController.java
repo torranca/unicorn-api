@@ -6,16 +6,16 @@ import java.util.Optional;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-02-12T11:40:43.041737Z[Europe/London]")
 @Controller
 @RequestMapping("${openapi.swaggerHelloUnicornBank.base-path:/api/v1}")
-public class PingApiController implements PingApi {
+public class PaymentApiController implements PaymentApi {
 
-    private final PingApiDelegate delegate;
+    private final PaymentApiDelegate delegate;
 
-    public PingApiController(@org.springframework.beans.factory.annotation.Autowired(required = false) PingApiDelegate delegate) {
-        this.delegate = Optional.ofNullable(delegate).orElse(new PingApiDelegate() {});
+    public PaymentApiController(@org.springframework.beans.factory.annotation.Autowired(required = false) PaymentApiDelegate delegate) {
+        this.delegate = Optional.ofNullable(delegate).orElse(new PaymentApiDelegate() {});
     }
 
     @Override
-    public PingApiDelegate getDelegate() {
+    public PaymentApiDelegate getDelegate() {
         return delegate;
     }
 
