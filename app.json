@@ -1,0 +1,10 @@
+{
+    "name": "Unicorn Bank",
+    "description": "An Bank that can easily be deployed to Heroku.",
+    "addons": [ "heroku-postgresql" ],
+    "env": {
+      "JAVA_OPTS": {
+        "value": "-Dspring.profiles.active=postgresql"
+      }
+    }
+  }

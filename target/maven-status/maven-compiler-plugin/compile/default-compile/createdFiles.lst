@@ -4,7 +4,6 @@ com/unicorn/bank/api/PaymentApiDelegate.class
 com/unicorn/bank/api/PaymentApi.class
 com/unicorn/bank/api/AccountsApi.class
 com/unicorn/bank/api/PaymentApiController$1.class
-com/unicorn/bank/unicornapi/test.class
 com/unicorn/bank/model/Account.class
 com/unicorn/bank/api/PingApi.class
 com/unicorn/bank/UnicornApiApplication.class
