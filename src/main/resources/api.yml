@@ -26,7 +26,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
-  /account:
+  /account/{id}:
     get:
       summary: Get Account
       operationId: getAccount
@@ -39,7 +39,6 @@ paths:
           required: true
           schema:
             type: string
-            format: uuid 
       responses:
         '200':
           description: List of Account
@@ -86,7 +85,6 @@ components:
       properties:
         id:
           type: string
-          format: uuid
         name:
           type: string
         balance:
@@ -106,15 +104,12 @@ components:
       properties:
         id:
           type: string
-          format: uuid
         reference:
           type: string
         fromAccountId:
           type: string
-          format: uuid
         toAccountId:
           type: string
-          format: uuid
         amount:
           type: number
           format: double
