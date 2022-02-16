@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UnicornAPIImpl implements PingApiDelegate {
+public class PingApiImpl implements PingApiDelegate {
 
     @Override
     public ResponseEntity<Ping> ping() {
