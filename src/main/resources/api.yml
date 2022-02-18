@@ -58,6 +58,13 @@ paths:
       operationId: postPayment
       tags:
         - payment
+      requestBody:
+        description: A Payment
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Payment'
       responses:
         '200':
           description: Payment Accepted
@@ -96,14 +103,13 @@ components:
     Payment:
       type: object
       required:
-        - id
         - fromAccountId
         - toAccountId
         - amount
         - currency
       properties:
         id:
-          type: string
+          type: number
         reference:
           type: string
         fromAccountId:
