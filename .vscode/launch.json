@@ -10,7 +10,7 @@
             "request": "launch",
             "mainClass": "${file}",
             "env": {
-                "JDBC_DATABASE_URL": "jdbc:postgresql://localhost:5432/alantorrance",
+                "JDBC_DATABASE_URL": "jdbc:postgresql://localhost:5432/torranca",
                 "PORT": "8080"
             }
         },
@@ -21,7 +21,7 @@
             "mainClass": "com.unicorn.bank.UnicornApiApplication",
             "projectName": "unicorn-api",
             "env": {
-                "JDBC_DATABASE_URL": "jdbc:postgresql://localhost:5432/alantorrance",
+                "JDBC_DATABASE_URL": "jdbc:postgresql://localhost:5432/torranca",
                 "PORT": "8080"
             }
         }
